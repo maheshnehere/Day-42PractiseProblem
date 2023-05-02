@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="/demo.css">
+
+
+</head>
+
+<body>
+   
+    <div class="container" >
+        <form action="" method="post">
+            <h2>Registration Form</h2><br><br>
+            <div class="form">
+                <div>
+                    <label for="name">First Name :</label>
+                    <input type="text" placeholder="Enter first name" id="name" name="name">  <br><br>
+                    <error-output class="name-error" for="name"></error-output>
+                </div>
+                <div>
+                    <label for="lastName">Last Name :</label>
+                    <input type="text" placeholder="Enter Last name" id="lastName" name="lastName"><br><br>
+                    <error-output class="lastName-error" for="lastName"></error-output>
+                </div>
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" placeholder="Enter email" id="email" name="email"><br><br>
+                    
+                </div>
+                <div>
+                    <label for="tel">Phone Number :</label>
+                    <input type="tel" placeholder="Enter phone number" id="tel" name="tel"><br><br>
+                   
+                </div>
+                <div>
+                    <label for="username">Username :</label>
+                    <input type="text" placeholder="Enter Username" id="username" name="username"><br><br>
+                </div>
+                <div>
+                    <label for="pwd">Password :</label>
+                    <input type="password" placeholder="Enter Password" id="pwd" name="pwd"><br><br>
+                   
+                </div>
+                <div>
+                    <label for="password">Confirm Password :</label>
+                    <input type="password" placeholder="Confirm Password" id="password" name="password"><br><br>
+                </div>
+                <span class="gender">Gender :</span>
+                <div>
+                    <input type="radio" name="gender" id="male">
+                    <label for="gender">Male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="gender">Female</label>
+                    <input type="radio" name="gender" id="other">
+                    <label for="gender">Other</label>
+                </div><br>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+             </div>
+
+        </form>
+         <script>
+        const name = document.querySelector('#name');
+        const nameError = document.querySelector('.name-error');
+        name.addEventListener('input', function(){
+            let nameRegex = RegExp("^[A-Z][a-zA-Z]{2,}$");
+            if(nameRegex.test(name.value))
+                nameError.textContent = "";
+            else nameError.textContent = "Invalid firstName";
+        });
+        const lastName = document.querySelector('#lastName');
+        const lastNameError = document.querySelector('.lastName-error');
+        lastName.addEventListener('input', function(){
+            let lastNameRegex = RegExp("^[A-Z][a-zA-Z]{2,}$");
+            if(lastNameRegex.test(lastName.value))
+                lastNameError.textContent = "";
+            else lastNameError.textContent = "Invalid lastName";
+        });
+      
+    </script>
+       
+    </div>
+    
+</body>
+
+</html>
